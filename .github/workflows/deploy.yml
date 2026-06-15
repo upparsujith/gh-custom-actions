@@ -72,7 +72,9 @@ jobs:
         run: ls
       - name: Deploy site
         run: echo "Deploying..."
+
   information:
+    needs: deploy # <--- Aligned perfectly with 'deploy:' under jobs
     runs-on: ubuntu-latest
     steps:
       - name: Get code
