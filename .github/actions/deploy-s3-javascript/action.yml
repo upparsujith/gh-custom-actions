@@ -1,0 +1,13 @@
+name: 'Deploy to S3'
+description: 'A custom JavaScript action to deploy application files to AWS S3.'
+# Inputs your main workflow can pass into this custom script
+inputs:
+  bucket-name:
+    description: 'The target AWS S3 bucket name'
+    required: false
+    default: 'my-default-bucket'
+
+runs:
+  # CRITICAL FOR JS ACTIONS: Tell GitHub to use Node.js to execute your script natively
+  using: 'node20'
+  main: 'index.js'
